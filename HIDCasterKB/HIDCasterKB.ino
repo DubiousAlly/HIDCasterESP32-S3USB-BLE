@@ -1,5 +1,5 @@
-#include "C:\Users\Administrator\Documents\Arduino\libraries\EspUsbAllHost\src\EspUsbHost.cpp"
-#include "C:\Users\Administrator\Documents\Arduino\libraries\EspUsbAllHost\src\EspUsbHost.h"
+#include "/EspUsbAllHost/src/EspUsbHost.cpp"
+#include "/EspUsbAllHost/src/EspUsbHost.h"
 //#include <Streaming.h>
 #include <BleCombo.h>
 
