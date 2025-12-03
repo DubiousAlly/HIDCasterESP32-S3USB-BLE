@@ -1,5 +1,5 @@
-#include "C:\Users\Administrator\Documents\Arduino\libraries\EspUsbAllHost\src\EspUsbHost.cpp"
-#include "C:\Users\Administrator\Documents\Arduino\libraries\EspUsbAllHost\src\EspUsbHost.h"
+#include "/EspUsbAllHost/src/EspUsbHost.cpp"
+#include "/EspUsbAllHost/src/EspUsbHost.h"
 #include <BleCombo.h>
 const String bHash[] = { "000", "100", "001", "101", "010", "110", "011", "111" };
 const mode_t mBDest[] = { MOUSE_LEFT, MOUSE_MIDDLE, MOUSE_RIGHT };
