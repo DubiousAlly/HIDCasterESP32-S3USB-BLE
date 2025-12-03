@@ -4,13 +4,17 @@ Switch control targets instead of HIDs. PLug your mouse and keyboard into their 
 I was annoyed to no end to discover how much heavy lifting SDL has been doing for my whole life making keyboard data make sense becasue the keys come out of the HID keyboard with 'a' as 0x04. Many if not perhaps even most of you already knew that, but it was news to me. YUCK. I've yet to tackle the indicator lights for NUM, CAPS, SCROLL lock, but I did learn the host manages tracking those locks and their lights, not the keyboard firmware, as I had always assumed. EspUsbHost.h to the rescue with its handy lookup-table on lines 92-198. I copied it at the top of my KB
 implementation and convert it to a lookup table for the Keyboard.press(KEY_) equivolents.
 
-##Libs
+<hr>
+
+### Libs 
 
 Something happened in the last two years of updates to the ESP32 libraries that broke the compilability of all the HID/BLE accompanying libraries so after some research I implemented the laziest solution the internet had and rolled back my esp32 libs to version 2.0.18. The alternative sounded almost equally easy-- simply changinging a data-type in couple of places.
 
 The inbuilt USB HID modifiers protocol makes a lovely prefab bitmask for CTRL, SHIFT, ALT, and META-- even diferentiating left and right packing 8 keys worth of state into one 8 bit value. I hypothesize its possibnle to simply pass a copy the usb hid report to the BLE endpoint, but I haven't figured that one out yet (sounds simple-- must be easy! hehe) The included BLE libraries are are compipling no problem in Arduiino IDE with ESP32 v2.0.18.
 
-##Conclusions
+<hr>
+
+### Conclusions 
 
 My honest assesment of the functionality is that the mouse passthrough is entirely seamless, as good as I ever would have hoped to make it. The Keyboard is fine if perhaps incomplete. I can't recall ever wanting numlock off, but it doesn't work yet. I've yet to discover any primary dysfunction or malfunction, but it doesn't feel as effortless and clean as the mouse. this mostly exists to type enough into the youtube search that predictive text saves me from needing to know how to spell what I'm looking for; so for my application: adaquate.
 
@@ -21,8 +25,9 @@ This is a little project that's lived on the back burner for a year or so now,
 finally picked at sufficiently to have become functional. There's probably a product
 to acheive this effect the world would sell me at this point, but then what would I have learned?
 
+<hr>
 
-##Credits
+### Credits
 
 ESP32-BLE-Combo from BlynkGo. I don't recall changing much of anything to get a repeatably quality result from this library. Using this same library for both keyboard and mouse.
 https://github.com/BlynkGO/ESP32-BLE-Combo/blob/main/
